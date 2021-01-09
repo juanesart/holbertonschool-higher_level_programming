@@ -1,0 +1,47 @@
+5-text_indentation
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+""" Checking for module docstring """
+>>> m = __import__("5-text_indentation").__doc__
+>>> len(m) > 1
+True
+
+""" Checking for function docstring """
+>>> f = __import__("5-text_indentation").text_indentation.__doc__
+>>> len(f) > 1
+True
+
+""" Checking for no args """
+>>> text_indentation()
+Traceback (most recent call last):
+...
+TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+""" Checking for too many args """
+>>> text_indentation("Hello", "World", "Holberton")
+Traceback (most recent call last):
+...
+TypeError: text_indentation() takes 1 positional argument but 3 were given
+
+
+""" Check if text is a string """
+>>> text_indentation(2)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+"""
+""" check if there is a space at the beginning or end of each printed line """
+>>> text_indentation(" hello")
+hello
+
+"""
+""" Check if it works properly """
+>>> text_indentation(" haro. My friend is here: together? we are here") 
+haro.
+<BLANKLINE>
+My friend is here:
+<BLANKLINE>
+together?
+<BLANKLINE>
+we are here
